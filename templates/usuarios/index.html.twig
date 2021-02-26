@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuarios{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Alpinistas</h1>
+    
+    <!-- crear zona -->
+    <div class="jumbotron">
+        <div class="list-group">
+            <a class="my-4 btn btn-info text-center" href="{{ path('usuarios_new') }}">Nuevo alpinista</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.email }}</td>
+                <td type="password">{{ usuario.password }}</td>
+                <td>
+                    <a href="{{ path('usuarios_show', {'id': usuario.id}) }}">show</a>
+                    <a href="{{ path('usuarios_edit', {'id': usuario.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

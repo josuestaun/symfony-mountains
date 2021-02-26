@@ -1,0 +1,14 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 22 feb. 2021, 14:08:34
+    Author     : Josue
+*/
+
+ .jumbotron{
+     background-color: $secondary-color;
+     @include gradient-bg($primary-color, $secondary-color);
+ }

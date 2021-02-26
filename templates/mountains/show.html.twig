@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mountains{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Mountain</h1>
+    <!-- card -->
+    <div class="container">
+        <div class="card" >
+            <img class="card-img-top rounded mx-auto d-block avatar" src='{{ mountain.imagen }}' alt="Card image cap">
+            <div class="card-block">
+                <h2 class="card-title"> {{ mountain.nombre }}</h2>
+                <h4 class="card-text description"> {{ mountain.altura }} m</h4>
+                <h4 class="card-text description"> {{ mountain.desnivel }} m</h4>
+                <p class=" card-text description"> {{ mountain.descripcion }}</p>
+            </div>
+            <div  class=" btn-group card-footer" role="group">
+                <a type="button" class="btn btn-success" href="{{ path('mountains_edit', {'id': mountain.id}) }}">Modificar</a>
+                <a type="button" class="btn btn-info" href="https://www.google.es/maps/preview">Ver en Maps</a>
+                {{ include('mountains/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <!--Volver a la principal-->
+    <a type="button" class="float-right mt-3 btn btn-light" href="{{ path('mountains_index') }}">Volver</a>
+
+{% endblock %}

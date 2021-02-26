@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Zonas{% endblock %}
+
+{% block body %}
+    <h1>Crear nueva zona</h1>
+
+     {{ include('zonas/_form.html.twig') }} 
+    {# Finalmente para evitar fallos y tener todas las funcionalidades quito
+        los form a mano
+            <div class="container">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Nueva Zona</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.pais) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.pais) }} 
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.provincia) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.provincia) }} 
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <!-- <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button> -->
+                        {{ form_widget(form.save) }}
+                    </div>
+                </div>
+               {{ form_end(form) }}
+            </fieldset>
+        </form>
+    </div>
+    #}
+
+    <a href="{{ path('zonas_index') }}">back to list</a>
+{% endblock %}

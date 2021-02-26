@@ -1,0 +1,22 @@
+//variables triada colores
+$primary-color: #4CA611;
+$secondary-color: #495EF2;
+$accent-color: #A83E19;
+
+//color fuente
+$font-color: black;
+
+//color para el borde
+$border-bottom-color: lighten($secondary-color, 10%);
+
+//valor para el radio
+$border-radius: 0.5rem;
+
+//valor tamaño de  fuentes
+$font-size-base: 1.2rem;
+
+$font-size-lg: $font-size-base*1.25;
+
+//valores del padding
+$padding-x: 0.5rem;
+$padding-y: 0.5rem;

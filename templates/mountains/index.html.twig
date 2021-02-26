@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mountains{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Mountains</h1>
+    <div class="jumbotron">
+        <h3 class="text-center">Bienvenido al proyecto de Josué Martínez sobre Montañas</h3>
+        <div class="list-group">
+            <a class="my-4 btn btn-info text-center" href="{{ path('zonas_index') }}">ZONAS</a>
+        </div>
+        <div class="list-group">
+            <a class="my-4 btn btn-info text-center" href="{{ path('mountains_new') }}">Añadir nueva montaña</a>
+        </div>
+    </div>
+    <!-- card -->
+    <div class="row mx-1">
+        {% for mountain in mountains %}
+            <div class="my-2 col-sm-4 col-lg-4 col-md-4">
+                <div class="card" min-height="450px">
+                    <img class="card-img-top rounded mx-auto d-block avatar" src='{{ mountain.imagen }}' alt="Card image cap">
+                    <div class="card-block">
+                        <h2 class="card-title">{{ mountain.nombre }}</h2>
+                        <p class="card-text description">{{ mountain.descripcion }}</p>
+                        <h4 class=" card-text description">{{ mountain.altura }} metros</h4>
+                    </div>
+                    <div  class=" btn-group card-footer" role="group">
+                        <a class="btn btn-dark" href="{{ path('mountains_show', {'id': mountain.id}) }}">Opciones</a>
+                        <a class="btn btn-dark" href="{{ path('mountains_edit', {'id': mountain.id}) }}">Editar</a> 
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p>no records found</p>
+        {% endfor %}
+    </div>
+{% endblock %}

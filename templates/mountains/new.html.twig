@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Mountains{% endblock %}
+
+{% block body %}
+    <h1>Añade una nueva montaña</h1>
+
+    {{ include('mountains/_form.html.twig') }}
+
+    {#
+    Finalmente para evitar fallos y tener todas las funcionalidades quito
+    <div class="container">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Nueva montaña</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.nombre) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.nombre) }} 
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.descripcion) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.descripcion) }} 
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.altura) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.altura) }}  
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.desnivel) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.desnivel) }}
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.imagen) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.imagen) }}  
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    {{ form_label(form.zona) }}
+                    <div class="col-md-4">
+                        {{ form_widget(form.zona) }} 
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <!-- <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button> -->
+                        {{ form_widget(form.save) }}
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    #}
+    
+    <a href="{{ path('mountains_index') }}">Volver</a>
+{% endblock %}
